@@ -85,7 +85,7 @@ class Valores {
 <div align="center" width="50">
   <p><strong> 👑 CONSTRUIBUCION 🎁 </strong></p>
 
-  ¡Agradecemos cualquier contribución para mejorar el Control de Calidad del sistema SwiftPay!
+  ¡Agradecemos cualquier contribución para mejorar el Control de Calidad del sistema DealerPOS!
 
   Haz un fork del proyecto.
   ¡Haz tus cambios y diviértete!
