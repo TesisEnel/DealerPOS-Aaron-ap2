@@ -1,0 +1,127 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "041c28809e895d48fcb11b94fe01a6b0",
+    "entities": [
+      {
+        "tableName": "Configuraciones",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`usuarioId` INTEGER NOT NULL, `sucursalId` INTEGER NOT NULL, `autenticacionId` INTEGER NOT NULL, `productoId` INTEGER NOT NULL, PRIMARY KEY(`usuarioId`))",
+        "fields": [
+          {
+            "fieldPath": "usuarioId",
+            "columnName": "usuarioId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sucursalId",
+            "columnName": "sucursalId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "autenticacionId",
+            "columnName": "autenticacionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productoId",
+            "columnName": "productoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "usuarioId"
+          ]
+        }
+      },
+      {
+        "tableName": "Carritos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`carritoId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `usuarioId` INTEGER NOT NULL, `productoId` INTEGER NOT NULL, `cantidad` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "carritoId",
+            "columnName": "carritoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "usuarioId",
+            "columnName": "usuarioId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productoId",
+            "columnName": "productoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cantidad",
+            "columnName": "cantidad",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "carritoId"
+          ]
+        }
+      },
+      {
+        "tableName": "DetalleCarritoAdicionales",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`detalleCarritoAdicionalId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `carritoId` INTEGER NOT NULL, `productoId` INTEGER NOT NULL, `adicionalId` INTEGER NOT NULL, `cantidad` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "detalleCarritoAdicionalId",
+            "columnName": "detalleCarritoAdicionalId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "carritoId",
+            "columnName": "carritoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productoId",
+            "columnName": "productoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adicionalId",
+            "columnName": "adicionalId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cantidad",
+            "columnName": "cantidad",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "detalleCarritoAdicionalId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '041c28809e895d48fcb11b94fe01a6b0')"
+    ]
+  }
+}
